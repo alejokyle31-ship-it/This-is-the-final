@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of an Information Technology student.">
+  <title>Kyle Andrei S. Alejo | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home"><span></span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#java">Java Project</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">STUDENT PORTFOLIO</p>
+        <h1>Hello, I'm <span>Kyle Andrei Alejo.</span></h1>
+        <p class="hero-copy">An aspiring IT professional who is learning how technology, programming, and creativity can solve everyday problems.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#about">Explore my portfolio</a>
+          <a class="button secondary" href="#contact">Contact me</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-heading">
+        <h2>Personal Information</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>I am a student from Olscho taking Bachelor of Science in Information Technology. I enjoy learning about computers, technology, and programming.</p>
+        </div>
+        <div class="info-panel">
+          <div><span>Full name</span><strong>Kyle Andrei S. Alejo</strong></div>
+          <div><span> Age and year born</span><strong>18 yrs old, born in September 18, 2008</strong></div>
+          <div><span>Program</span><strong>BS Information Technology</strong></div>
+          <div><span>College</span><strong>Our Lady of the Sacred Heart College of Guimba, Inc.</strong></div>
+          <div><span>Location</span><strong>Guiset, Guimba, Nueva Ecija, Philippines</strong></div>
+          <div><span>Email</span><strong><a href="alejokyle31@gmail.com">alejokyle31@gmail.com
+                </a></strong></div>
+          <div><span>Contact number</span><strong>09925225898</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="education">
+      <div class="section-heading">
+        <p class="eyebrow"></p>
+        <h2>Educational Background</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <span class="timeline-dot"></span>
+          <p class="timeline-date">Elementary</p>
+          <h3>Guiset Elementary School</h3>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-dot"></span>
+          <p class="timeline-date">Junior High School</p>
+          <h3>Bartolome Sanggalan National High School</h3>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-dot"></span>
+          <p class="timeline-date">Senior High School</p>
+          <h3>Bonifacio Luz Natividad Educational Foundation, Inc.</h3>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-dot"></span>
+          <p class="timeline-date">College</p>
+          <h3>Our Lady of the Sacred Heart College of Guimba, Inc.</h3>
+          <p>Currently taking Bachelor of Science in Information Technology.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-heading">
+        <h2>Skills & Competencies</h2>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card"><span class="skill-number"><b>TECHNICAL SKILLS</b></span><h3>•Some basic computer troubleshooting</h3><h3>•Software editing</h3></article>
+        <article class="skill-card"><span class="skill-number">PROGRAMMING KNOWLEDGE</span><h3>• Java: Basics and beginner</h3></p> <p><h3>• Html: Web page structures</h3></p><p><h3>•Css: Styling web pages with layout, colors, and responsive design.</h3></p></article>
+      </div>
+    </section>
+
+    <section class="section alt" id="java">
+      <div class="section-heading">
+        <h2>Java Project</h2></div>
+          <span class="project-chip"></span>
+          <h3>My Console-Based Java Game</h3>
+          <p>Tic-Tac-Toe is a two-player strategy game played on a 3×3 board. In this Java console version, the player uses X, while the computer uses O. The goal is to get three matching symbols in a horizontal, vertical, or diagonal line. Players take turns choosing an empty position from 1 to 9. The game ends when either the player or computer wins, or when all spaces are filled and the result will show a draw.</p>
+        
+        </div>
+        <pre><code>
+import java.util.Scanner;
+import java.util.Random;
+
+public class LuckyNumberGame {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        Random rand = new Random();
+
+        int luckyNumber = rand.nextInt(10) + 1;
+        int score = 0;
+
+        System.out.println("=======================");
+        System.out.println("  LUCKY NUMBER GAME");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("Guess the lucky number!");
+        System.out.println("Choose a number from 1 to 10.");
+        System.out.println("You have 3 chances.");
+
+        for (int i = 1; i <= 3; i++) {
+
+            System.out.print("\nAttempt " + i + ": ");
+            int guess = sc.nextInt();
+
+            if (guess == luckyNumber) {
+                System.out.println("Amazing! You just found it!");
+                score = 10;
+                break;
+            } else if (guess < luckyNumber) {
+                System.out.println("Too low! Try higher.");
+            } else {
+                System.out.println("Too high! Try lower.");
+            }
+        }
+
+        System.out.println();
+        System.out.println("       GAME RESULTS");
+        System.out.println();
+        System.out.println("Lucky Number: " + luckyNumber);
+        System.out.println("Your Score: " + score);
+
+        if (score == 10) {
+            System.out.println("YOU ARE LUCKY!");
+        } else {
+            System.out.println("Better luck next time!");
+        }
+
+        
+        System.out.println("   THANK YOU FOR PLAYING!");
+        sc.close();
+    }
+}
+</code></pre>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-heading">
+        <p class="eyebrow"></p>
+        <h2>Contact Information</h2>
+        <p>you may contact me through the details below.</p>
+      </div>
+      <div class="contact-card">
+        <p><span>Email</span><strong>alejokyle31@gmail.com</strong></p>
+        <p><span>Contact number</span><strong>09925225898</strong></p>
+        <p><span>Facebook</span><strong> <a href="https://www.facebook.com/profile.php?id=61583811548140" target="_blank"> Kyle Ojela</strong></p>
+        <p><span>Location</span><strong>Guimba, Nueva Ecija, Philippines</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><span id="year"></span> Kyle Alejo • Personal Portfolio</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
